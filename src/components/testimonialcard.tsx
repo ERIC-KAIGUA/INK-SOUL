@@ -1,9 +1,10 @@
+interface TestimonialCardProps {
+  quote: string;
+  author: string;
+}
 
+export const TestimonialCard = ({quote , author}: TestimonialCardProps) => {
 
-export const TestimonialCard = ({quote , author}) => {
-
-
-   
 
   return (
     <div className="min-w-[320px] max-w-sm bg-shade rounded-2xl p-4 shadow-lg gap-2">

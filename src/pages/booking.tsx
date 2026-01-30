@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Header } from "../components/header";
 import { CiClock2 } from "react-icons/ci";
-import DatePicker from "react-datepicker";
 import toast, { Toaster } from 'react-hot-toast';
 import { useRef } from "react";
 import { motion } from "motion/react";
@@ -52,8 +51,8 @@ export const Booking = () => {
 
   // Persist session choice
   useEffect(() => {
-  setShowCalendar(false);
-  setSelectedId(null);
+  // setShowCalendar(false);
+  // setSelectedId(null);
   localStorage.removeItem("bookingStep");
 }, []);
 
@@ -76,15 +75,6 @@ export const Booking = () => {
     }
   };
 
-  // const handleTimeSelect = (time: string) => {
-  //   setSelectedTime(time);
-  //   if (selectedDate) {
-  //     localStorage.setItem(
-  //       "selectedDateTime",
-  //       `${format(selectedDate, "yyyy-MM-dd")} ${time}`
-  //     );
-  //   }
-  // };
 
  
   const isFormValid = name.trim() !== "" && 
@@ -261,7 +251,9 @@ export const Booking = () => {
 
                         {/*  render the actual days */}
                         {monthDays.map((day, idx) => {
-                          const isPast = day < new Date().setHours(0, 0, 0, 0);
+                          const todayStart = new Date().setHours(0, 0, 0, 0);
+                          const dayStart   = day.setHours(0, 0, 0, 0);
+                          const isPast = dayStart < todayStart;
                           const isSelected = selectedDate && isSameDay(day, selectedDate);
 
                           return (

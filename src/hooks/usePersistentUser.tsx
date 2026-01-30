@@ -10,6 +10,8 @@ export type UserProfile = {
   preferredStyles: string[];    // e.g. ["Blackwork", "Neo-Traditional", "Realism"]
   allergies?: string;
   createdAt: string;
+  dob?:string;
+  medicalNotes?:string;
 };
 
 const DEFAULT_USER: UserProfile = {

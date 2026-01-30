@@ -30,7 +30,9 @@ export const Dashboard = () => {
   const { messages } = usePersistedMessages();
   const [sessionTitle, setSessionTitle] = useState<string | null>(null);
   const [hasBooking, setHasBooking] = useState(false);
-  const [bookingDateTime, setBookingDateTime] = useState<string | null>(null);
+  const [bookingDateTime, setBookingDateTime] = useState<string | null>(()=>{
+    return localStorage.getItem("bookingDateTime");
+  });
   
 
 
@@ -41,9 +43,7 @@ export const Dashboard = () => {
  useEffect(() => {
     // Option 1: Use the simple formatted string (most reliable right now)
     const savedDateTime = localStorage.getItem("bookingDateTime");
-    if (savedDateTime) {
-      setBookingDateTime(savedDateTime);
-    }
+  
 
     // Option 2: Use the structured object (better for future extension)
     const savedInfo = localStorage.getItem("bookingInfo");
