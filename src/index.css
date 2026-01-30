@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import "tailwindcss";
+
+:root {
+  /* 🌞 Light mode */
+  --color-accent: 232 93 4;
+  --color-background: 253 246 233;
+  --color-foreground: 26 26 26;
+  --color-shade: 255 255 255;
+  --color-tertiary:59,60,54;
+}
+
+.dark {
+  /* 🌙 Dark mode */
+  --color-accent: 212 165 116;
+  --color-background: 26 26 26;
+  --color-foreground: 253 246 233;
+  --color-shade:52,52,52;
+  --color-tertiary:190,191,197;
+}
+
+@theme {
+  --font-playfair: "Playfair Display", serif;
+  --font-sans: "DM Sans", sans-serif;
+}
+
+/* Create custom utility classes manually */
+@layer utilities {
+  .text-accent {
+    color: rgb(var(--color-accent));
+  }
+  .bg-accent {
+    background-color: rgb(var(--color-accent));
+  }
+  .border-accent {
+    border-color: rgb(var(--color-accent));
+  }
+  .text-foreground {
+    color: rgb(var(--color-foreground));
+  }
+ 
+  .bg-background {
+    background-color: rgb(var(--color-background));
+  }
+   .hover\:text-accent:hover {
+    color: rgb(var(--color-accent));
+  }
+  .hover\:bg-accent:hover {
+    background-color: rgb(var(--color-accent));
+  }
+   .hover\:border-accent:hover {
+    border-color: rgb(var(--color-accent));
+  }
+  .bg-shade {
+    background-color: rgb(var(--color-shade));
+  }
+  .text-tertiary {
+    color: rgb(var(--color-tertiary));
+  }
+  .border-tertiary {
+    border-color: rgb(var(--color-tertiary));
+  }
+  .animate-marquee:hover {
+  animation-play-state: paused;
+  }
+
+}
+
+body {
+  background-color: rgb(var(--color-background));
+  font-family: var(--font-sans);
+}
+
+@keyframes marquee {
+   0% {
+    transform: translateX(0);
+  }
+  45% {
+    transform: translateX(-25%);
+  }
+  55% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 60s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+/* Smooth theme transitions */
+*,
+*::before,
+*::after {
+  transition-property:
+    background-color,
+    color,
+    border-color,
+    box-shadow,
+    fill,
+    stroke;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+*,
+*::before,
+*::after {
+  transition-delay: 20ms;
+}
+
+
