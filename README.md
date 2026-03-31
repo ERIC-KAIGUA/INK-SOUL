@@ -50,7 +50,7 @@ For Future improvements, a backend can be a backend can be integrated with real 
 
 ### Running Locally
 ```bash
-git clone https://github.com/your-username/tattoo-client-portal.git
+$ git clone https://github.com/ERIC-KAIGUA/INK-SOUL.git
 cd tattoo-client-portal
 npm install
 npm run dev
