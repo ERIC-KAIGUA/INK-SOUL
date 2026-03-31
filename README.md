@@ -7,7 +7,7 @@ Built as a portfolio project to demonstrate clean React architecture, state pers
 For Future improvements, a backend can be a backend can be integrated with real API integration, authentication, admin panel etc...
 
 ### Live Demo
-🔗 [https://your-username.github.io/tattoo-client-portal] (replace with your actual Vercel/Netlify link)
+🔗 https://ink-soul-bq1e.vercel.app/
 
 ### Features
 - **Personalized Dashboard**  
